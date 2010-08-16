@@ -30,6 +30,10 @@ buildLibDB <- function(path=getOption("devlib"))
 #============================================================================ 
 # install packages to dev tree
 
+# TODO check if exists, add force argument?
+
+# TODO detach/unload if loaded?
+
 install.devlib <- function(fname, pkg, ver, ...)
 {
   loc <- file.path(getOption("devlib"), pkg, ver)
@@ -66,16 +70,10 @@ devlibrary <- function(pkg, ver, devtree=getOption("devlib"), ...)
 # directory), but after any other trees so that these packages are loaded first
 # (?)
 
-f <- function(new)
-{
-  if(!missing(new))
-  {
-    new <- Sys.glob(path.expand(new))
-    paths <- unique(path.expand(c(new, .Library.site, .Library)))
-    .dupa <<- paths[file.info(paths)$isdir %in% TRUE]
-  }
-  else .dupa
-}
-
 z <- buildLibDB(dlib1)
-z[ with(z, order(package, ver)) , ]
+ind <- unlist(with(z, tapply(ver, package, order, decreasing=TRUE)))
+zz <- z[ ind == 1 , ]
+newpaths <- unique(path.expand(c(.libPaths()[1], zz$libloc, .Library.site, .Library)))
+newpaths # ?
+
+.libPaths(newpaths)
