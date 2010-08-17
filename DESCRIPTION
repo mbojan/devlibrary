@@ -1,10 +1,16 @@
 Package: devlib
 Type: Package
-Title: What the package does (short line)
-Version: 1.0
+Title: Maintaining developers' library tree
+Version: 0.1-0
 Date: 2010-08-17
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Michal Bojanowski
+Maintainer: Michal Bojanowski <michal2992@gmail.com>
+Description: While developing new or patching existing packages it is
+	convenient to be able to load different versions of the same package.
+	Standard R package library cannot store different versions of the same
+	package. Package 'devlib' enables that by managing a "developers
+	library" in which every package is essentially stored in its own
+	library sub-tree. Wrapper functions hide all the mechanics from the
+	end-user.
+License: GPL 2
 LazyLoad: yes
