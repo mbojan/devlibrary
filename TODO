@@ -7,3 +7,24 @@ $Id$
 Write documentation.
 
 Think about examples: how to sandbox example library tree?
+
+
+#============================================================================ 
+# adding dev library to lib paths
+
+# NOTE On .libPaths this shouldn't be on the fist location
+
+# 1. Create a vector of paths to package library trees. Only for most recent
+# versions (from lib db extract those based on package name and version number
+
+# 2. Put those after 1st entry in libPaths (default pkg installation
+# directory), but after any other trees so that these packages are loaded first
+# (?)
+
+z <- buildLibDB(dlib1)
+ind <- unlist(with(z, tapply(ver, package, order, decreasing=TRUE)))
+zz <- z[ ind == 1 , ]
+newpaths <- unique(path.expand(c(.libPaths()[1], zz$libloc, .Library.site, .Library)))
+newpaths # ?
+
+.libPaths(newpaths)
