@@ -1,7 +1,12 @@
-devlib <- function(pkg, ver=NULL, devtree=getOption("devlib"), ...)
+devlib <- function(pkg=NULL, ver=NULL, devtree=getOption("devlib"), ...)
 {
   # check if availability
   db <- buildLibDB(devtree)
+  if(is.null(pkg))
+  {
+      cat("Packages in", devtree, "\n")
+      return(db)
+  }
   pkgmatch <- db$package %in% pkg
   if(!any(pkgmatch))
     stop("package", pkg, "not available in", devtree)
