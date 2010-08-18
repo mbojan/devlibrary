@@ -1,8 +1,8 @@
 Package: devlib
 Type: Package
 Title: Maintaining developers' library tree
-Version: 0.1-0
-Date: 2010-08-17
+Version: 0.2-0
+Date: 2010-08-19
 Author: Michal Bojanowski
 Maintainer: Michal Bojanowski <michal2992@gmail.com>
 Description: While developing new or patching existing packages it is
