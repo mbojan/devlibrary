@@ -1,1 +1,5 @@
-exportPattern("^[[:alpha:]]+")
+export( 
+	devlib, 
+	buildLibDB,
+	install.devlib
+)

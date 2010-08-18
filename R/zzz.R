@@ -1,6 +1,6 @@
 .onLoad <- function(libname, pkgname)
 {
-  path <- file.path(Sys.getenv("HOME"), "lib", "dev")
-  cat("Setting 'devlib' to", path, "\n")
-  options( devlib=path  )
+  source( system.file(file.path("extdata", "devlibloc.R"), package=pkgname) )
+  cat("Setting 'devlib' to", sQuote(devlibloc), "\n")
+  options( devlib=devlibloc  )
 }

@@ -14,3 +14,4 @@ Description: While developing new or patching existing packages it is
 	end-user.
 License: GPL 2
 LazyLoad: yes
+LazyData: yes
