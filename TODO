@@ -4,9 +4,25 @@ $Id$
 			       Michal Bojanowski
 			     <michal2992@gmail.com>
 
-Write documentation.
+
+Bugs:
+
+
+R CMD check gives: 
+
+ * checking R code for possible problems ... NOTE
+devlib: ... may be used in an incorrect context
+
+
+
+New features:
+
+
+
+Other:
 
 Think about examples: how to sandbox example library tree?
+
 
 
 #============================================================================ 
