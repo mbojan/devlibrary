@@ -1,13 +1,4 @@
-PKGNAME=devlib
-SRCDIR=$(shell pwd)
-DATE=$(shell date)
-INSTALLDIR=$(shell dirname $(SRCDIR))/bin
-CHECKDIR=$(shell dirname $(SRCDIR))
-RCALL=R CMD
-PKGPDF=$(PKGNAME:=.pdf)
-PKGDVI=$(PKGNAME:=.dvi)
-
-
+include Makevars
 
 .PHONY: check
 check: 
