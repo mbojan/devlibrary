@@ -1,5 +1,4 @@
-devlib <-
-function(pkg, ver=NULL, devtree=getOption("devlib"), ...)
+devlib <- function(pkg, ver=NULL, devtree=getOption("devlib"), ...)
 {
   # check if availability
   db <- buildLibDB(devtree)
@@ -18,7 +17,7 @@ function(pkg, ver=NULL, devtree=getOption("devlib"), ...)
     if(!any(vermatch))
     {
       stop("package", paste(pkg, ver, sep="_"), "not available\n",
-          "available versions of", pkg, ":", paste(dsub$version, collapse=", "))
+          "available versions of", pkg, ":", paste(dbsub$version, collapse=", "))
     }
     loadver <- ver
   }
