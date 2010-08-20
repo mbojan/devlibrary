@@ -14,6 +14,13 @@ R CMD check gives:
 devlib: ... may be used in an incorrect context
 
 
+Fixes:
+
+devlib() could return only one column with package versions.
+
+x <- devlib() prints the message. Perhaps should return an object
+of certain class with dedicated print method.
+
 
 New features:
 
